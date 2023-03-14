@@ -1,0 +1,34 @@
+class Animal
+{
+    String name;
+}
+class dog extends Animal
+{
+    void makesound()
+    {
+        System.out.print(name);
+        System.out.println(" Bow Bow");
+    }
+}
+class cat extends Animal
+{
+    void makesound()
+    {
+        System.out.print(name);
+        System.out.println(" Meow Meow");
+    }
+}
+public class inhertience2
+{
+    public static void main(String[] args)
+    {
+        dog d = new dog();
+        cat c = new cat();
+        System.out.println("Method 1");
+        d.name = "Moti";
+        c.name = "Mano";
+        d.makesound();
+        System.out.println("Method 2");
+        c.makesound();
+    }
+}
