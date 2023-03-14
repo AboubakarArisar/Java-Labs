@@ -1,0 +1,50 @@
+import java.util.Scanner;
+class Person
+{
+    String name,id,address;
+    void printdata()
+    {
+        System.out.println(name + " " + id + " "+address);
+    }
+
+}
+class Student extends Person
+{
+    int semester;
+    String department;
+
+    void printdata()
+    {
+
+        System.out.println(name + " " + id +" "+department+" " + semester+ " "+address);
+    }
+
+}
+class Teacher extends Person
+{
+    int experince;
+    void printdata()
+    {
+        System.out.println(name+" "+id+" "+address+" "+experince);
+    }
+}
+public class inheritence
+{
+    public static void main(String[] args)
+    {
+        Student student = new Student();
+        student.name = "Aboubakar";
+        student.id = "107";
+        student.address = "sukkur";
+        student.semester = 2;
+        student.department = "CS";
+        Teacher teacher = new Teacher();
+        teacher.name = "Sana Fatima";
+        teacher.id = "101";
+        teacher.address = "sukkur";
+        teacher.experince = 4;
+        student.printdata();//student class method
+        teacher.printdata();//teacher class method
+
+    }
+}
