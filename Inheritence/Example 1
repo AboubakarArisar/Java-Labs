@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Person
+{
+ protected String name,id,address;
+
+}
+class Student extends Person
+{
+
+}
+public class inheritence
+{
+    public static void main(String[] args)
+    {
+        Student student = new Student();
+        Person p = new Person();
+        p.name = "Ali";
+        student.name = "Asif";
+        System.out.println(student.name+' '+p.name);
+
+
+    }
+}
