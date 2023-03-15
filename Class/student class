@@ -1,0 +1,71 @@
+class student
+{
+   private int id,grade;
+    private double gpa;
+    private String name;
+    student()
+    {
+
+    }
+    student(int id , String name, int grade, double gpa)
+    {
+        this.id = id;
+        this.name = name;
+        this.grade = grade;
+        this.gpa = gpa;
+    }
+    void setId(int id)
+    {
+        this.id = id;
+    }
+    void setName(String name)
+    {
+        this.name = name;
+    }
+    void setGrade(int grade)
+    {
+        this.grade = grade;
+    }
+    void setGpa(double gpa)
+    {
+        this.gpa = gpa;
+    }
+    int getId()
+    {
+        return id;
+    }
+    int getGrade()
+    {
+        return grade;
+    }
+    double getGpa()
+    {
+        return gpa;
+    }
+    String getName()
+    {
+        return name;
+    }
+    void printDetails()
+    {
+        System.out.println("Id : "+id+ ", Name : "+name+", Grade : "+grade+ ", GPA : "+gpa);
+    }
+
+}
+public class Quiz
+{
+    public static void main(String args[])
+    {
+        student s1 = new student(1,"Aboubakar",10,3.5);
+        s1.printDetails();
+        System.out.println();
+        student s2 = new student(2,"Mubashir",9,3.6);
+        s2.printDetails();
+        System.out.println();
+        student s3 = new student(3, "Saifullah",10,4.0) ;
+        s3.printDetails();
+        System.out.println();
+        student s4 = new student(4, "Abdullah", 9, 3.89);
+        s4.printDetails();
+    }
+}
