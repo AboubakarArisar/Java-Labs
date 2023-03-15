@@ -1,0 +1,81 @@
+class Car1 {
+    private String make, model;
+    private int year;
+    private double mileage;
+    private boolean isRunning;
+
+    Car1()
+    {
+
+    }
+
+    Car1(String make, String model, int year, double mileage) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.mileage = mileage;
+    }
+
+    void setMake(String make) {
+        this.make = make;
+    }
+
+    void setModel(String model) {
+        this.model = model;
+    }
+
+    void setYear(int year) {
+        this.year = year;
+    }
+
+    void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    String getMake() {
+        return make;
+    }
+
+    String getModel() {
+        return model;
+    }
+
+    int getYear() {
+        return year;
+    }
+
+    double getMileage() {
+        return mileage;
+    }
+
+    void startCar() {
+        isRunning = true;
+    }
+
+    void stopCar() {
+        isRunning = false;
+    }
+
+    void driveCar(double miles) {
+        if (isRunning == true) {
+            System.out.println("Your Car is on the way for "+miles+" miles");
+            this.mileage+=miles;
+
+        } else {
+            System.out.println("Sorry Your car is stop please start the car");
+        }
+    }
+
+}
+public class car
+{
+
+    public static void main(String args[])
+    {
+        Car1 c1 = new Car1("Volvo","car",2023,20222.0);
+        System.out.println("Mileage Befor ride  is : "+c1.getMileage());
+        c1.stopCar();///if you want to start car call startcar method there
+        c1.driveCar(2000.0);
+        System.out.println("Mileage after Your ride  is : "+c1.getMileage());
+    }
+}
