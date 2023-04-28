@@ -1,0 +1,26 @@
+package PolymorphismLab6;
+abstract class Player
+{
+    String name;
+    abstract void setName(String str);
+    String getName()
+    {
+        return name;
+    }
+}
+class FootballPlayer extends Player
+{
+    void setName(String str) {
+        name = str;
+    }
+
+}
+public class Task3
+{
+    public static void main(String[] args)
+    {
+        FootballPlayer f1 = new FootballPlayer();
+        f1.setName("Aboubakar");
+        System.out.println("FootBall Player name is : "+f1.getName());
+    }
+}
