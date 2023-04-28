@@ -1,0 +1,55 @@
+package PolymorphismLab6;
+/*Create a Parent Class name Animal with instance variable name, age and gender, also a method name ProduceSound().
+1.	Create child classes of Animal Dog, Frog, Kitten and Tomcat. Dog, Frog, Cats are animal.  Kittens are female cats and Tomcats are male cats. Define useful constructors and methods.
+2.	Modify the ProduceSound() method inherited by child class by its type "e.g for Dog ProduceSound("Bow wow")".
+•	Hint: method OverRiding will be used( MayBe just a keyWord would be used and everything else would be same as parent class).
+3.	Create an array of different kind of animals and calculate the average age of each kind of animals. (hint: you can use instanceOf method for this task)
+*/
+abstract class Animal
+{
+    String name,gender;
+    double age;
+    abstract void ProdeuceSound();
+}
+class Dogs extends Animal {
+    void ProdeuceSound()
+    {
+        System.out.println("Boww Bowww");
+    }
+}
+class Frog extends Animal
+{
+    void ProdeuceSound()
+    {
+        System.out.println("Tawwee Taweee");
+    }
+}
+class kitten extends Animal
+{
+    void ProdeuceSound()
+    {
+        System.out.println("Meoooowowowwo");
+    }
+}
+class Tomcat extends Animal
+{
+    void ProdeuceSound()
+    {
+        System.out.println("Eeeoeoeoeooeoweoeo");
+    }
+}
+
+public class Task4
+{
+    public static void main(String[] args)
+    {
+        Dogs d1 = new Dogs();
+        Frog f1 = new Frog();
+        kitten k1 = new kitten();
+        Tomcat c1 = new Tomcat();
+        d1.ProdeuceSound();
+        f1.ProdeuceSound();
+        k1.ProdeuceSound();
+        c1.ProdeuceSound();
+    }
+}
