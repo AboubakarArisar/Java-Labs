@@ -1,55 +1,105 @@
 package PolymorphismLab6;
-/*Create a Parent Class name Animal with instance variable name, age and gender, also a method name ProduceSound().
-1.	Create child classes of Animal Dog, Frog, Kitten and Tomcat. Dog, Frog, Cats are animal.  Kittens are female cats and Tomcats are male cats. Define useful constructors and methods.
-2.	Modify the ProduceSound() method inherited by child class by its type "e.g for Dog ProduceSound("Bow wow")".
-•	Hint: method OverRiding will be used( MayBe just a keyWord would be used and everything else would be same as parent class).
-3.	Create an array of different kind of animals and calculate the average age of each kind of animals. (hint: you can use instanceOf method for this task)
-*/
-abstract class Animal
-{
-    String name,gender;
-    double age;
-    abstract void ProdeuceSound();
-}
-class Dogs extends Animal {
-    void ProdeuceSound()
-    {
-        System.out.println("Boww Bowww");
+abstract class Animal{
+    private String name, gender;
+    private int age;
+
+    Animal(String name, String gender, int age){
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
     }
-}
-class Frog extends Animal
-{
-    void ProdeuceSound()
-    {
-        System.out.println("Tawwee Taweee");
+
+    String getName(){
+        return name;
     }
-}
-class kitten extends Animal
-{
-    void ProdeuceSound()
-    {
-        System.out.println("Meoooowowowwo");
+
+    String getGender(){
+        return gender;
     }
+
+    int getAge(){
+        return age;
+    }
+
+    abstract String produceSound(String sound);
 }
-class Tomcat extends Animal
-{
-    void ProdeuceSound()
-    {
-        System.out.println("Eeeoeoeoeooeoweoeo");
+
+class Dog extends Animal{
+    Dog(String name, String gender, int age){
+        super(name, gender, age);
+    }
+    String produceSound(String sound){
+        return "\nAnimal name: " + getName() + "\nAnimal gender: " + getGender() + "\nAnimal age: " + getAge() + "\nsound : " + sound;
     }
 }
 
-public class Task4
-{
-    public static void main(String[] args)
-    {
-        Dogs d1 = new Dogs();
-        Frog f1 = new Frog();
-        kitten k1 = new kitten();
-        Tomcat c1 = new Tomcat();
-        d1.ProdeuceSound();
-        f1.ProdeuceSound();
-        k1.ProdeuceSound();
-        c1.ProdeuceSound();
+class Frog extends Animal{
+    Frog(String name, String gender, int age){
+        super(name, gender, age);
     }
+    String produceSound(String sound){
+        return "\nAnimal name: " + getName() + "\nAnimal gender: " + getGender() + "\nAnimal age: " + getAge() + "\nsound : " + sound;
+    }
+}
+
+class Cats extends Animal{
+    Cats(String name, String gender, int age){
+        super(name, gender, age);
+    }
+    String produceSound(String sound){
+        return "\nAnimal name: " + getName() + "\nAnimal gender: " + getGender() + "\nAnimal age: " + getAge() + "\nsound : " + sound;
+    }
+}
+
+class AnimalTest{
+    public static void main(String []arg){
+        System.out.println("=======Dogs=======");
+        Dog dog1 = new Dog("Spike", "Male", 13);
+        Dog dog2 = new Dog("Cracker", "Female", 11);
+        System.out.println(dog1.produceSound("Bow wow wow"));
+        System.out.println();
+        System.out.println(dog2.produceSound("Bow wow wow"));
+        System.out.println();
+        System.out.println("========Cats========");
+        Cats cat1 = new Cats("Kitten", "Female", 10);
+        Cats cat2 = new Cats("Tomcat", "Male", 9);
+        System.out.println(cat1.produceSound("Meon meon meon"));
+        System.out.println();
+        System.out.println(cat2.produceSound("Meon meon meon"));
+        System.out.println();
+        System.out.println("========Frogs========");
+
+        Frog frog1 = new Frog("Venus", "Female", 14);
+        Frog frog2 = new Frog("Leonardo","Male", 12);
+        System.out.println(frog1.produceSound("Tran tran"));
+        System.out.println();
+        System.out.println(frog2.produceSound("Tran tran"));
+        System.out.println();
+
+        Animal animal[] = {dog1, dog2, cat1, cat2, frog1, frog2};
+        double calcDogAvg = 0.0, calcCatAvg = 0.0, calcFrogAvg = 0.0;
+        int countDogs = 0, countCats = 0, countFrogs = 0;
+        for(int i=0; i<animal.length; i++){
+            if(animal[i] instanceof Dog){
+                calcDogAvg = calcDogAvg + animal[i].getAge();
+                countDogs++;
+            }
+        }
+        for(int i=0; i<animal.length; i++){
+            if(animal[i] instanceof Frog){
+                calcFrogAvg = calcFrogAvg + animal[i].getAge();
+                countFrogs++;
+            }
+        }
+        for(int i=0; i<animal.length; i++){
+            if(animal[i] instanceof Cats){
+                calcCatAvg = calcCatAvg + animal[i].getAge();
+                countCats++;
+            }
+        }
+        System.out.println("Average age of dogs: " + (calcDogAvg/countDogs));
+        System.out.println("Average age of cats: " + (calcCatAvg/countCats));
+        System.out.println("Average age of frogs: " + (calcFrogAvg/countFrogs));
+    }
+
 }
