@@ -1,0 +1,13 @@
+package package1;
+
+
+public class class2 {
+	
+	String name;
+	public class2(String name)
+	{
+		this.name = name;
+		System.out.println("Welcome "+name+" , This is the second class of package 1");
+	}
+
+}
