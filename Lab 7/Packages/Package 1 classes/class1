@@ -1,0 +1,11 @@
+package package1;
+
+public class class1 {
+	
+	String name;
+	public class1(String name)
+	{
+		this.name = name;
+		System.out.println("Welcome "+name+" , This is the first class of package 1");
+	}
+}
