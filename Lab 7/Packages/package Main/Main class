@@ -1,0 +1,18 @@
+package PackagePractice;
+import package1.*;
+import package2.*;
+import package3.*;
+public class Test {
+public static void main(String ab[])
+{
+	System.out.println("=======Package 1 Classes=======");
+	new class1("Aboubakar");
+	new class2("Aboubakar");
+	System.out.println("=======Package 2 Classes=======");
+	new class3("Aboubakar");
+	new class4("Aboubakar");
+	System.out.println("=======Package 3 Classes=======");
+	new class5("Aboubakar");
+	new class6("Aboubakar");
+}
+}
