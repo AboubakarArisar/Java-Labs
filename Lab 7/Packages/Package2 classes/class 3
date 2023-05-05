@@ -1,0 +1,15 @@
+package package2;
+
+
+public class class3 {
+	
+	String name;
+	public class3(String name)
+	{
+		this.name = name;
+		System.out.println("Welcome "+name+" , This is the third class of package 2");
+	}
+
+
+
+}
