@@ -1,0 +1,16 @@
+interface SomethingIsWrong {
+    void aMethod(int aValue);
+}
+
+public class correctInterface implements SomethingIsWrong{
+	public void aMethod(int aValue)
+	{
+		System.out.println("Value Passed in interface is : " + aValue);
+	}
+public static void main(String ar[])
+{
+	correctInterface crt = new correctInterface();
+	crt.aMethod(298);
+}
+}
+ 
